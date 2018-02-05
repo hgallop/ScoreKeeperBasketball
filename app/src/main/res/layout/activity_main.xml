@@ -31,12 +31,15 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="1"
                     android:layout_margin="@dimen/margin"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center"
                     android:text="@string/home"
-                    android:textColor="@color/team"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="@dimen/team" />
 
                 <TextView
@@ -113,10 +116,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="1"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center"
                     android:text="@string/visitor"
-                    android:textColor="@color/team"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="@dimen/team" />
 
                 <TextView
