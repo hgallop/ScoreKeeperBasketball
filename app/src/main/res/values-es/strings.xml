@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Marcador de Baloncesto</string>
+    <string name="home">Local</string>
+    <string name="visitor">Visitante</string>
+    <string name="score">0</string>
+    <string name="point3">+3 Puntos</string>
+    <string name="point2">+2 Puntos</string>
+    <string name="free">Tiro Libre</string>
+    <string name="reset">Reiniciar</string>
+    <string name="image">Baloncesto en reposo en una cancha</string>
+</resources>

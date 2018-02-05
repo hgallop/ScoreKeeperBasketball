@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Basketball de Pointage</string>
+    <string name="home">Domicile</string>
+    <string name="visitor">Visiteurs</string>
+    <string name="score">0</string>
+    <string name="point3">+3 Points</string>
+    <string name="point2">+2 Points</string>
+    <string name="free">Lancer Franc</string>
+    <string name="reset">Réinitialiser</string>
+    <string name="image">Basketball au repos sur un terrain</string>
+</resources>
