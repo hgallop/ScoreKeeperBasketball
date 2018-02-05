@@ -11,10 +11,34 @@ public class MainActivity extends AppCompatActivity {
     int scoreVisitor = 0;
     int score = 0;
 
+    TextView homeScore;
+    TextView visitorScore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        homeScore = findViewById(R.id.home_score);
+        visitorScore = findViewById(R.id.visitor_score);
+    }
+
+    /** Saves app data between states */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("scoreHome", scoreHome);
+        outState.putInt("scoreVisitor", scoreVisitor);
+    }
+
+    /** Restores app data on new state */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        scoreHome = savedInstanceState.getInt("scoreHome");
+        scoreVisitor = savedInstanceState.getInt("scoreVisitor");
+        displayForHome(scoreHome);
+        displayForVisitor(scoreVisitor);
     }
 
     /**
@@ -31,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Home.
      */
     public void displayForHome(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.home_score);
+        TextView scoreView = homeScore;
         scoreView.setText(String.valueOf(score));
     }
 
@@ -39,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Visiting.
      */
     public void displayForVisitor(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.visitor_score);
+        TextView scoreView = visitorScore;
         scoreView.setText(String.valueOf(score));
     }
 
