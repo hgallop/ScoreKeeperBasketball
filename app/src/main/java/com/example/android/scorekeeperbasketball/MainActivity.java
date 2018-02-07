@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    public final String SCORE_HOME = "scoreHome";
+    private final String SCORE_VISITOR = "scoreVisitor";
+
     int scoreHome = 0;
     int scoreVisitor = 0;
     int score = 0;
@@ -27,18 +30,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("scoreHome", scoreHome);
-        outState.putInt("scoreVisitor", scoreVisitor);
+        outState.putInt(SCORE_HOME, scoreHome);
+        outState.putInt(SCORE_VISITOR, scoreVisitor);
     }
 
     /** Restores app data on new state */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        scoreHome = savedInstanceState.getInt("scoreHome");
-        scoreVisitor = savedInstanceState.getInt("scoreVisitor");
-        displayForHome(scoreHome);
-        displayForVisitor(scoreVisitor);
+        scoreHome = savedInstanceState.getInt(SCORE_HOME);
+        scoreVisitor = savedInstanceState.getInt(SCORE_VISITOR);
     }
 
     /**
@@ -55,16 +56,14 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Home.
      */
     public void displayForHome(int score) {
-        TextView scoreView = homeScore;
-        scoreView.setText(String.valueOf(score));
+        homeScore.setText(String.valueOf(score));
     }
 
     /**
      * Displays the given score for Visiting.
      */
     public void displayForVisitor(int score) {
-        TextView scoreView = visitorScore;
-        scoreView.setText(String.valueOf(score));
+        visitorScore.setText(String.valueOf(score));
     }
 
     /**

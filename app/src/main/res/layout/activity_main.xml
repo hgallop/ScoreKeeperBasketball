@@ -49,6 +49,7 @@
                     android:layout_marginBottom="@dimen/margin_bottom"
                     android:fontFamily="sans-serif-light"
                     android:gravity="center"
+                    android:freezesText="true"
                     android:text="@string/score"
                     android:textColor="@color/score"
                     android:textSize="@dimen/score" />
@@ -133,6 +134,7 @@
                     android:layout_marginBottom="@dimen/margin_bottom"
                     android:fontFamily="sans-serif-light"
                     android:gravity="center"
+                    android:freezesText="true"
                     android:text="@string/score"
                     android:textColor="@color/score"
                     android:textSize="@dimen/score" />
