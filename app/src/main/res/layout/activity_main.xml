@@ -29,75 +29,32 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:shadowColor="@android:color/darker_gray"
-                    android:shadowDx="3"
-                    android:shadowDy="3"
-                    android:shadowRadius="5"
+                    style="@style/TextStyle"
                     android:layout_margin="@dimen/margin"
                     android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="@string/home"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/team" />
+                    android:text="@string/home" />
 
                 <TextView
                     android:id="@+id/home_score"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.ScoreStyle"
                     android:layout_marginBottom="@dimen/margin_bottom"
                     android:fontFamily="sans-serif-light"
-                    android:gravity="center"
                     android:freezesText="true"
-                    android:text="@string/score"
-                    android:textColor="@color/score"
-                    android:textSize="@dimen/score" />
+                    android:text="@string/score" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
-                    android:background="@drawable/button_shape"
+                    style="@style/ButtonStyle"
                     android:onClick="threePointsHome"
-                    android:shadowColor="#A8A8A8"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="@string/point3"
-                    android:textColor="#000000" />
+                    android:text="@string/point3" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
-                    android:layout_marginTop="@dimen/button_margin"
-                    android:background="@drawable/button_shape"
+                    style="@style/ButtonStyle.MarginStyle"
                     android:onClick="twoPointsHome"
-                    android:shadowColor="#A8A8A8"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="@string/point2"
-                    android:textColor="#000000" />
+                    android:text="@string/point2" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/button_margin"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
-                    android:layout_marginTop="@dimen/button_margin"
-                    android:background="@drawable/button_shape"
-                    android:onClick="onePointHome"
-                    android:shadowColor="#A8A8A8"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="@string/free"
-                    android:textColor="#000000" />
+                    style="@style/ButtonStyle.MarginStyle"
+                    android:text="@string/free" />
 
             </LinearLayout>
 
@@ -114,75 +71,33 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextStyle"
                     android:layout_margin="@dimen/margin"
-                    android:shadowColor="@android:color/darker_gray"
-                    android:shadowDx="3"
-                    android:shadowDy="3"
-                    android:shadowRadius="5"
                     android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="@string/visitor"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/team" />
+                    android:text="@string/visitor" />
 
                 <TextView
                     android:id="@+id/visitor_score"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.ScoreStyle"
                     android:layout_marginBottom="@dimen/margin_bottom"
                     android:fontFamily="sans-serif-light"
-                    android:gravity="center"
                     android:freezesText="true"
-                    android:text="@string/score"
-                    android:textColor="@color/score"
-                    android:textSize="@dimen/score" />
+                    android:text="@string/score" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
-                    android:background="@drawable/button_shape"
+                    style="@style/ButtonStyle"
                     android:onClick="threePointsVisitor"
-                    android:shadowColor="#A8A8A8"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="@string/point3"
-                    android:textColor="#000000" />
+                    android:text="@string/point3" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
-                    android:layout_marginTop="@dimen/button_margin"
-                    android:background="@drawable/button_shape"
+                    style="@style/ButtonStyle.MarginStyle"
                     android:onClick="twoPointsVisitor"
-                    android:shadowColor="#A8A8A8"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="@string/point2"
-                    android:textColor="#000000" />
+                    android:text="@string/point2" />
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/button_margin"
-                    android:layout_marginLeft="@dimen/button_sides"
-                    android:layout_marginRight="@dimen/button_sides"
-                    android:layout_marginTop="@dimen/button_margin"
-                    android:background="@drawable/button_shape"
+                    style="@style/ButtonStyle.MarginStyle"
                     android:onClick="onePointVisitor"
-                    android:shadowColor="#A8A8A8"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    android:text="@string/free"
-                    android:textColor="#000000" />
+                    android:text="@string/free" />
 
             </LinearLayout>
 
@@ -196,12 +111,12 @@
             android:layout_marginBottom="@dimen/reset"
             android:background="@drawable/button_shape"
             android:onClick="resetAll"
-            android:shadowColor="#A8A8A8"
+            android:shadowColor="@color/shadow"
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="@string/reset"
-            android:textColor="#000000" />
+            android:textColor="@color/score" />
 
     </RelativeLayout>
 </ScrollView>
