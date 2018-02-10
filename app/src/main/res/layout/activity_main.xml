@@ -11,9 +11,9 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:contentDescription="@string/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/image"
             android:scaleType="centerCrop"
             android:src="@drawable/basketball_2" />
 
@@ -32,14 +32,16 @@
                     android:id="@+id/home_name"
                     style="@style/TextStyle"
                     android:layout_margin="@dimen/margin"
-                    android:fontFamily="sans-serif-medium" />
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Home" />
 
                 <TextView
                     android:id="@+id/home_score"
                     style="@style/TextStyle.ScoreStyle"
                     android:layout_marginBottom="@dimen/margin_bottom"
                     android:fontFamily="sans-serif-light"
-                    android:freezesText="true" />
+                    android:freezesText="true"
+                    android:text="0" />
 
                 <Button
                     style="@style/ButtonStyle"
@@ -74,14 +76,16 @@
                     android:id="@+id/visitor_name"
                     style="@style/TextStyle"
                     android:layout_margin="@dimen/margin"
-                    android:fontFamily="sans-serif-medium"/>
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Visitor" />
 
                 <TextView
                     android:id="@+id/visitor_score"
                     style="@style/TextStyle.ScoreStyle"
                     android:layout_marginBottom="@dimen/margin_bottom"
                     android:fontFamily="sans-serif-light"
-                    android:freezesText="true" />
+                    android:freezesText="true"
+                    android:text="0" />
 
                 <Button
                     style="@style/ButtonStyle"
