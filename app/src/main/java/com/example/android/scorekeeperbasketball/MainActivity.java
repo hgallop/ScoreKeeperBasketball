@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putString(VISITOR_NAME, visitor.getName());
     }
 
-    /** Restores app data on new state */
+    /** Restores app data on new state screen rotation */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
