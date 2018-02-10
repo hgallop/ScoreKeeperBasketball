@@ -6,9 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-    // Did you mean to mix and match public and private?
-    public final String SCORE_HOME = "scoreHome";
+  
+    private final String SCORE_HOME = "scoreHome";
     private final String SCORE_VISITOR = "scoreVisitor";
     private final String HOME_NAME = "homeName";
     private final String VISITOR_NAME = "visitorName";
@@ -42,8 +41,9 @@ public class MainActivity extends AppCompatActivity {
         homeTeam = new Team(0, homeName, homeScoreTextView, homeNameTextView);
         visitorTeam = new Team(0, visitorName, visitorScoreTextView, visitorNameTextView);
 
-        homeTeam.displayName(homeName);
-        visitorTeam.displayName(visitorName);
+
+        home.displayName(home.getName());
+        visitor.displayName(visitor.getName());
 
         homeTeam.displayScore(homeTeam.getScore());
         visitorTeam.displayScore(visitorTeam.getScore());
