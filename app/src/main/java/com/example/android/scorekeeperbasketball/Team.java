@@ -71,20 +71,17 @@ public class Team {
     }
 
     public void threePoints(View view) {
-        int ThreePointer = 3;
-        Score = Score + ThreePointer;
+        Score += 3;
         displayScore(Score);
     }
 
     public void basket(View view) {
-        int Basket = 2;
-        Score = Basket + Score;
+        Score += 2;
         displayScore(Score);
     }
 
     public void freeThrow(View view) {
-        int FreeThrow = 1;
-        Score = FreeThrow + Score;
+        Score += 1;
         displayScore(Score);
     }
 
