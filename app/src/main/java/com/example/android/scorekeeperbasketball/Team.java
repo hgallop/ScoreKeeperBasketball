@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 public class Team {
 
-    // variable names should be lowercase
-    // Uppercase is typically reserved for things like classes.
     private int score;
     private String name;
 
@@ -27,9 +25,6 @@ public class Team {
 
     //Constructor
     public Team (int score, String name, TextView displayScore, TextView displayName) {
-        // when you use an external variable that uses the same name as an internal variable
-        // you've created, you can use "this" to denote the internal one so you can assign
-        // the external to the internal
         this.score = score;
         this.name = name;
         scoreDisplay = displayScore;
@@ -44,26 +39,6 @@ public class Team {
     //accessor
     public String getName() {
         return this.name;
-    }
-
-    //mutator
-    public void setScoreDisplay(TextView view){
-        scoreDisplay = view;
-    }
-
-    //accessor
-    public TextView getScoreDisplay(){
-        return scoreDisplay;
-    }
-
-    //mutator
-    public void setNameDisplay(TextView view){
-        nameDisplay = view;
-    }
-
-    //accessor
-    public TextView getNameDisplay(){
-        return nameDisplay;
     }
 
     //mutator
@@ -82,9 +57,6 @@ public class Team {
     public void displayScore(int score) {
         scoreDisplay.setText(String.valueOf(score));
     }
-
-    // You should really consider creating constants for your scores opposed to using
-    // "magic" numbers
 
     public void threePoints(View view) {
         score += THREEPOINTS;

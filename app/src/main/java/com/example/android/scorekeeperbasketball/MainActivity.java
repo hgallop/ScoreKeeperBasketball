@@ -15,13 +15,11 @@ public class MainActivity extends AppCompatActivity {
     Team homeTeam;
     Team visitorTeam;
 
-    // Be descriptive in your variable names.  homeScoreTextView conveys more than homeScore (which sounds like an int)
     TextView homeScoreTextView;
     TextView visitorScoreTextView;
     TextView homeNameTextView;
     TextView visitorNameTextView;
 
-    // Again choose your variable names better. The better the read, the easier they are to understand.
     String homeName;
     String visitorName;
 
@@ -42,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         visitorTeam = new Team(0, visitorName, visitorScoreTextView, visitorNameTextView);
 
 
-        home.displayName(home.getName());
-        visitor.displayName(visitor.getName());
+        homeTeam.displayName(homeTeam.getName());
+        visitorTeam.displayName(visitorTeam.getName());
 
         homeTeam.displayScore(homeTeam.getScore());
         visitorTeam.displayScore(visitorTeam.getScore());
@@ -81,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    /**
+     * Calculates update for three point score. Displays updated score.
+     */
     public void threePointsHome(View view) {
       homeTeam.threePoints(view);
     }
