@@ -29,18 +29,17 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/home_name"
                     style="@style/TextStyle"
                     android:layout_margin="@dimen/margin"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/home" />
+                    android:fontFamily="sans-serif-medium" />
 
                 <TextView
                     android:id="@+id/home_score"
                     style="@style/TextStyle.ScoreStyle"
                     android:layout_marginBottom="@dimen/margin_bottom"
                     android:fontFamily="sans-serif-light"
-                    android:freezesText="true"
-                    android:text="@string/score" />
+                    android:freezesText="true" />
 
                 <Button
                     style="@style/ButtonStyle"
@@ -54,6 +53,7 @@
 
                 <Button
                     style="@style/ButtonStyle.MarginStyle"
+                    android:onClick="onePointHome"
                     android:text="@string/free" />
 
             </LinearLayout>
@@ -71,18 +71,17 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/visitor_name"
                     style="@style/TextStyle"
                     android:layout_margin="@dimen/margin"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/visitor" />
+                    android:fontFamily="sans-serif-medium"/>
 
                 <TextView
                     android:id="@+id/visitor_score"
                     style="@style/TextStyle.ScoreStyle"
                     android:layout_marginBottom="@dimen/margin_bottom"
                     android:fontFamily="sans-serif-light"
-                    android:freezesText="true"
-                    android:text="@string/score" />
+                    android:freezesText="true" />
 
                 <Button
                     style="@style/ButtonStyle"

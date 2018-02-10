@@ -9,13 +9,19 @@ public class MainActivity extends AppCompatActivity {
 
     public final String SCORE_HOME = "scoreHome";
     private final String SCORE_VISITOR = "scoreVisitor";
+    private final String HOME_NAME = "nameHome";
+    private final String VISITOR_NAME = "nameVisitor";
 
-    int scoreHome = 0;
-    int scoreVisitor = 0;
-    int score = 0;
+    Team home;
+    Team visitor;
 
     TextView homeScore;
     TextView visitorScore;
+    TextView homeName;
+    TextView visitorName;
+
+    String nameHome;
+    String nameVisitor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,61 +30,60 @@ public class MainActivity extends AppCompatActivity {
 
         homeScore = findViewById(R.id.home_score);
         visitorScore = findViewById(R.id.visitor_score);
+        homeName = findViewById(R.id.home_name);
+        visitorName = findViewById(R.id.visitor_name);
+
+        nameHome = getResources().getString(R.string.home);
+        nameVisitor = getResources().getString(R.string.visitor);
+
+        home = new Team(0, nameHome, homeScore, homeName);
+        visitor = new Team(0, nameVisitor, visitorScore, visitorName);
+
+        home.displayName(nameHome);
+        visitor.displayName(nameVisitor);
+
+        home.displayScore(home.getScore());
+        visitor.displayScore(visitor.getScore());
     }
 
     /** Saves app data between states */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(SCORE_HOME, scoreHome);
-        outState.putInt(SCORE_VISITOR, scoreVisitor);
+        outState.putInt(SCORE_HOME, home.getScore());
+        outState.putInt(SCORE_VISITOR, visitor.getScore());
+        outState.putString(HOME_NAME, home.getName());
+        outState.putString(VISITOR_NAME, visitor.getName());
     }
 
     /** Restores app data on new state */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        scoreHome = savedInstanceState.getInt(SCORE_HOME);
-        scoreVisitor = savedInstanceState.getInt(SCORE_VISITOR);
+        home.setScore(savedInstanceState.getInt(SCORE_HOME));
+        visitor.setScore(savedInstanceState.getInt(SCORE_VISITOR));
+        home.setName(savedInstanceState.getString(HOME_NAME));
+        visitor.setName(savedInstanceState.getString(VISITOR_NAME));
     }
 
     /**
      * Resets both scores to 0
      */
     public void resetAll(View view) {
-        scoreHome = 0;
-        scoreVisitor = 0;
-        displayForHome(scoreHome);
-        displayForVisitor(scoreVisitor);
+        home.setScore(0);
+        visitor.setScore(0);
+        home.displayScore(home.getScore());
+        visitor.displayScore(visitor.getScore());
     }
 
-    /**
-     * Displays the given score for Home.
-     */
-    public void displayForHome(int score) {
-        homeScore.setText(String.valueOf(score));
-    }
 
-    /**
-     * Displays the given score for Visiting.
-     */
-    public void displayForVisitor(int score) {
-        visitorScore.setText(String.valueOf(score));
-    }
 
-    /**
-     * Calculates update for three point score. Displays updated score.
-     */
     public void threePointsHome(View view) {
-        score = 3;
-        scoreHome = scoreHome + score;
-        displayForHome(scoreHome);
+      home.threePoints(view);
     }
 
     public void threePointsVisitor(View view) {
-        score = 3;
-        scoreVisitor = scoreVisitor + score;
-        displayForVisitor(scoreVisitor);
+       visitor.threePoints(view);
     }
 
 
@@ -86,15 +91,11 @@ public class MainActivity extends AppCompatActivity {
      * Calculates update for two point score. Displays updated score.
      */
     public void twoPointsHome(View view) {
-        score = 2;
-        scoreHome = scoreHome + score;
-        displayForHome(scoreHome);
+        home.basket(view);
     }
 
     public void twoPointsVisitor(View view) {
-        score = 2;
-        scoreVisitor = scoreVisitor + score;
-        displayForVisitor(scoreVisitor);
+       visitor.basket(view);
     }
 
 
@@ -102,14 +103,10 @@ public class MainActivity extends AppCompatActivity {
      * Calculates update for one point score. Displays updated score.
      */
     public void onePointHome(View view) {
-        score = 1;
-        scoreHome = scoreHome + score;
-        displayForHome(scoreHome);
+        home.freeThrow(view);
     }
 
     public void onePointVisitor(View view) {
-        score = 1;
-        scoreVisitor = scoreVisitor + score;
-        displayForVisitor(scoreVisitor);
+        visitor.freeThrow(view);
     }
 }
