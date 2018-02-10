@@ -6,84 +6,87 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+  
     private final String SCORE_HOME = "scoreHome";
     private final String SCORE_VISITOR = "scoreVisitor";
-    private final String HOME_NAME = "nameHome";
-    private final String VISITOR_NAME = "nameVisitor";
+    private final String HOME_NAME = "homeName";
+    private final String VISITOR_NAME = "visitorName";
 
-    Team home;
-    Team visitor;
+    Team homeTeam;
+    Team visitorTeam;
 
-    TextView homeScore;
-    TextView visitorScore;
-    TextView homeName;
-    TextView visitorName;
+    // Be descriptive in your variable names.  homeScoreTextView conveys more than homeScore (which sounds like an int)
+    TextView homeScoreTextView;
+    TextView visitorScoreTextView;
+    TextView homeNameTextView;
+    TextView visitorNameTextView;
 
-    String nameHome;
-    String nameVisitor;
+    // Again choose your variable names better. The better the read, the easier they are to understand.
+    String homeName;
+    String visitorName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        homeScore = findViewById(R.id.home_score);
-        visitorScore = findViewById(R.id.visitor_score);
-        homeName = findViewById(R.id.home_name);
-        visitorName = findViewById(R.id.visitor_name);
+        homeScoreTextView = findViewById(R.id.home_score);
+        visitorScoreTextView = findViewById(R.id.visitor_score);
+        homeNameTextView = findViewById(R.id.home_name);
+        visitorNameTextView = findViewById(R.id.visitor_name);
 
-        nameHome = getResources().getString(R.string.home);
-        nameVisitor = getResources().getString(R.string.visitor);
+        homeName = getResources().getString(R.string.home);
+        visitorName = getResources().getString(R.string.visitor);
 
-        home = new Team(0, nameHome, homeScore, homeName);
-        visitor = new Team(0, nameVisitor, visitorScore, visitorName);
+        homeTeam = new Team(0, homeName, homeScoreTextView, homeNameTextView);
+        visitorTeam = new Team(0, visitorName, visitorScoreTextView, visitorNameTextView);
+
 
         home.displayName(home.getName());
         visitor.displayName(visitor.getName());
 
-        home.displayScore(home.getScore());
-        visitor.displayScore(visitor.getScore());
+        homeTeam.displayScore(homeTeam.getScore());
+        visitorTeam.displayScore(visitorTeam.getScore());
     }
 
     /** Saves app data between states screen rotation*/
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(SCORE_HOME, home.getScore());
-        outState.putInt(SCORE_VISITOR, visitor.getScore());
-        outState.putString(HOME_NAME, home.getName());
-        outState.putString(VISITOR_NAME, visitor.getName());
+        outState.putInt(SCORE_HOME, homeTeam.getScore());
+        outState.putInt(SCORE_VISITOR, visitorTeam.getScore());
+        outState.putString(HOME_NAME, homeTeam.getName());
+        outState.putString(VISITOR_NAME, visitorTeam.getName());
     }
 
     /** Restores app data on new state screen rotation */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        home.setScore(savedInstanceState.getInt(SCORE_HOME));
-        visitor.setScore(savedInstanceState.getInt(SCORE_VISITOR));
-        home.setName(savedInstanceState.getString(HOME_NAME));
-        visitor.setName(savedInstanceState.getString(VISITOR_NAME));
+        homeTeam.setScore(savedInstanceState.getInt(SCORE_HOME));
+        visitorTeam.setScore(savedInstanceState.getInt(SCORE_VISITOR));
+        homeTeam.setName(savedInstanceState.getString(HOME_NAME));
+        visitorTeam.setName(savedInstanceState.getString(VISITOR_NAME));
     }
 
     /**
      * Resets both scores to 0
      */
     public void resetAll(View view) {
-        home.setScore(0);
-        visitor.setScore(0);
-        home.displayScore(home.getScore());
-        visitor.displayScore(visitor.getScore());
+        homeTeam.setScore(0);
+        visitorTeam.setScore(0);
+        homeTeam.displayScore(homeTeam.getScore());
+        visitorTeam.displayScore(visitorTeam.getScore());
     }
 
 
 
     public void threePointsHome(View view) {
-      home.threePoints(view);
+      homeTeam.threePoints(view);
     }
 
     public void threePointsVisitor(View view) {
-       visitor.threePoints(view);
+       visitorTeam.threePoints(view);
     }
 
 
@@ -91,11 +94,11 @@ public class MainActivity extends AppCompatActivity {
      * Calculates update for two point score. Displays updated score.
      */
     public void twoPointsHome(View view) {
-        home.basket(view);
+        homeTeam.basket(view);
     }
 
     public void twoPointsVisitor(View view) {
-       visitor.basket(view);
+       visitorTeam.basket(view);
     }
 
 
@@ -103,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
      * Calculates update for one point score. Displays updated score.
      */
     public void onePointHome(View view) {
-        home.freeThrow(view);
+        homeTeam.freeThrow(view);
     }
 
     public void onePointVisitor(View view) {
-        visitor.freeThrow(view);
+        visitorTeam.freeThrow(view);
     }
 }
