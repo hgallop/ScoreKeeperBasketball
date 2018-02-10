@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         visitor.displayScore(visitor.getScore());
     }
 
-    /** Saves app data between states */
+    /** Saves app data between states screen rotation*/
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
