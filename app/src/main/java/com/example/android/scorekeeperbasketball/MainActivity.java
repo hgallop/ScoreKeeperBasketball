@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public final String SCORE_HOME = "scoreHome";
+    private final String SCORE_HOME = "scoreHome";
     private final String SCORE_VISITOR = "scoreVisitor";
     private final String HOME_NAME = "nameHome";
     private final String VISITOR_NAME = "nameVisitor";
