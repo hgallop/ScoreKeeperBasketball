@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         home = new Team(0, nameHome, homeScore, homeName);
         visitor = new Team(0, nameVisitor, visitorScore, visitorName);
 
-        home.displayName(nameHome);
-        visitor.displayName(nameVisitor);
+        home.displayName(home.getName());
+        visitor.displayName(visitor.getName());
 
         home.displayScore(home.getScore());
         visitor.displayScore(visitor.getScore());
