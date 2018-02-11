@@ -1,76 +1,59 @@
 package com.example.android.scorekeeperbasketball;
 
-import android.view.View;
-import android.widget.TextView;
-
 /**
  * Created by doyou on 2/10/2018.
  */
 
 public class Team {
 
+    // declares and initialize variables for scoring.
+    static private final int THREEPOINTS = 3;
+    static private final int BASKET = 2;
+    static private final int FREETHROW =1 ;
+
+    // declares variables for object
     private int score;
     private String name;
 
-    private TextView scoreDisplay;
-    private TextView nameDisplay;
-
-    // setup scoring
-    final int THREEPOINTS = 3;
-    final int BASKET = 2;
-    final int FREETHROW =1 ;
-
-
-
-
-    //Constructor
-    public Team (int score, String name, TextView displayScore, TextView displayName) {
+    // constructor method to create Team object.
+    public Team (int score, String name) {
         this.score = score;
         this.name = name;
-        scoreDisplay = displayScore;
-        nameDisplay = displayName;
     }
 
-    //mutator
+    // mutator. allows name to be set.
     public void setName(String name){
         this.name = name;
     }
 
-    //accessor
+    // accessor. allows name to be accessed.
     public String getName() {
         return this.name;
     }
 
-    //mutator
+    // mutator. allows score to be set.
     public void setScore(int score){
         this.score = score;
     }
 
+    // accessor. allows score to get accessed.
     public int getScore(){
         return this.score;
     }
 
-    public void displayName(String name){
-        nameDisplay.setText(name);
-    }
-
-    public void displayScore(int score) {
-        scoreDisplay.setText(String.valueOf(score));
-    }
-
-    public void threePoints(View view) {
+    // method to score three points
+    public void threePoints() {
         score += THREEPOINTS;
-        displayScore(score);
     }
 
-    public void basket(View view) {
+    // method to score two points.
+    public void basket() {
         score += BASKET;
-        displayScore(score);
     }
 
-    public void freeThrow(View view) {
+    // method to score one point.
+    public void freeThrow() {
         score += FREETHROW;
-        displayScore(score);
     }
 
 }
