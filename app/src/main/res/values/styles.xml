@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -23,6 +23,11 @@
 
     <style name="TextStyle.ScoreStyle">
         <item name="android:textSize">@dimen/score</item>
+        <item name="android:fontFamily" tools:targetApi="16">sans-serif-light</item>
+    </style>
+
+    <style name="TextStyle.TeamStyle">
+        <item name="android:fontFamily" tools:targetApi="16">sans-serif-medium</item>
     </style>
 
     <style name="ButtonStyle">
