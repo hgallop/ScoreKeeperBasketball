@@ -12,48 +12,48 @@ public class Team {
     static private final int FREETHROW =1 ;
 
     // declares variables for object
-    private int score;
-    private String name;
+    private int mScore;
+    private String mName;
 
     // constructor method to create Team object.
     public Team (int score, String name) {
-        this.score = score;
-        this.name = name;
+        mScore = score;
+        mName = name;
     }
 
     // mutator. allows name to be set.
     public void setName(String name){
-        this.name = name;
+        mName = name;
     }
 
     // accessor. allows name to be accessed.
     public String getName() {
-        return this.name;
+        return mName;
     }
 
     // mutator. allows score to be set.
     public void setScore(int score){
-        this.score = score;
+        mScore = score;
     }
 
     // accessor. allows score to get accessed.
     public int getScore(){
-        return this.score;
+        return mScore;
     }
 
     // method to score three points
     public void threePoints() {
-        score += THREEPOINTS;
+        mScore += THREEPOINTS;
     }
 
     // method to score two points.
     public void basket() {
-        score += BASKET;
+        mScore += BASKET;
     }
 
     // method to score one point.
     public void freeThrow() {
-        score += FREETHROW;
+        mScore += FREETHROW;
     }
 
 }
