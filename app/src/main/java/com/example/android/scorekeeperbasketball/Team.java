@@ -7,9 +7,9 @@ package com.example.android.scorekeeperbasketball;
 public class Team {
 
     // declares and initialize variables for scoring.
-    static private final int THREEPOINTS = 3;
+    static private final int THREE_POINTS = 3;
     static private final int BASKET = 2;
-    static private final int FREETHROW =1 ;
+    static private final int FREE_THROW = 1 ;
 
     // declares variables for object
     private int mScore;
@@ -43,7 +43,7 @@ public class Team {
 
     // method to score three points
     void threePoints() {
-        mScore += THREEPOINTS;
+        mScore += THREE_POINTS;
     }
 
     // method to score two points.
@@ -53,7 +53,7 @@ public class Team {
 
     // method to score one point.
     void freeThrow() {
-        mScore += FREETHROW;
+        mScore += FREE_THROW;
     }
 
 }
