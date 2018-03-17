@@ -1,7 +1,7 @@
 package com.example.android.scorekeeperbasketball;
 
 /**
- * Created by doyou on 2/10/2018.
+ * Creates Team class
  */
 
 public class Team {
@@ -16,7 +16,7 @@ public class Team {
     private String mName;
 
     // constructor method to create Team object.
-    public Team (int score, String name) {
+    Team(int score, String name) {
         mScore = score;
         mName = name;
     }
@@ -42,17 +42,17 @@ public class Team {
     }
 
     // method to score three points
-    public void threePoints() {
+    void threePoints() {
         mScore += THREEPOINTS;
     }
 
     // method to score two points.
-    public void basket() {
+    void basket() {
         mScore += BASKET;
     }
 
     // method to score one point.
-    public void freeThrow() {
+    void freeThrow() {
         mScore += FREETHROW;
     }
 
